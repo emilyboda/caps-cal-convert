@@ -6,7 +6,7 @@ import datetime
 
 # Set things about your file
 timezone = 'America/New_York'
-partial_url = "https://calendar.google.com/calendar/u/0/htmlembed?src=nhl_23_%2557ashington%2B%2543apitals%23sports@group.v.calendar.google.com&ctz=America/New_York"
+public_url = "https://calendar.google.com/calendar/u/0/htmlembed?src=nhl_23_%2557ashington%2B%2543apitals%23sports@group.v.calendar.google.com&ctz=America/New_York"
 where_to_save_ics = "/home/pi/caps-cal-convert/converted.ics"
 
 # get the first date of the month
@@ -21,7 +21,7 @@ date_in_url = today.strftime("%Y%m")+"01" + "/" + today.strftime("%Y")+nextmonth
 #print(date_in_url)
 
 # in the future edit the date so it's the start of today's month
-url = partial_url+"&dates="+date_in_url
+url = public_url+"&dates="+date_in_url
 
 first_month = requests.get(url)
 first_month.encoding = 'utf-8'
